@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 20:14:00 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:23:11 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:48:05 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

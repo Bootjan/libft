@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:08:24 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:23:00 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 00:05:51 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -28,5 +28,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[dst_len + i] = src[i];
 		i++;
 	}
+	dst[dst_len + i] = 0;
 	return (dst_len + src_len);
 }

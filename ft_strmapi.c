@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:56:44 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:23:04 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:47:56 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {

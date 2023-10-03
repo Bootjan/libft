@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:03:06 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/03 19:22:10 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:46:30 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

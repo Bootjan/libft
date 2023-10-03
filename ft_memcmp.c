@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:41:48 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:22:24 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:46:51 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

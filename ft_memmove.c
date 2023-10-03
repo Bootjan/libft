@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:09:35 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:22:29 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:52:05 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
@@ -26,5 +26,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		*(dest + n - i - 1) = *(source + n - i - 1);
 		i++;
 	}
-	return (dest);
+	return (dst);
 }

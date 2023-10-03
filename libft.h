@@ -6,7 +6,7 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:48:15 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 20:03:37 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 00:07:56 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <string.h>
 # include <unistd.h>
 
-size_t			ft_strlen(const char *s);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memalloc(size_t size);
 char			*ft_strnew(size_t size);
@@ -53,5 +52,8 @@ void			ft_putendl_fd(const char *s, int fd);
 void			ft_putchar_fd(char c, int fd);
 char			*ft_itoa(int n);
 void			*ft_memchr(const void *s, int c, size_t n);
+int				ft_atoi(const char *str);
+void			*ft_calloc(size_t nmemb, size_t size);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

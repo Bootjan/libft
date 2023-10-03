@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:02:11 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:58:54 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:47:17 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	ft_putnbr_helper(long n, int fd)
 {

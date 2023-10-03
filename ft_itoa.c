@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:18:29 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:44:52 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:46:41 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {

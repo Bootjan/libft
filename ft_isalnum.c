@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:36:11 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:47:04 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:46:35 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

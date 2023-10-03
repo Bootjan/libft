@@ -6,11 +6,11 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:09:56 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 19:23:15 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/03 23:48:09 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(const char *s)
 {
