@@ -6,7 +6,7 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:41:48 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 23:46:51 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 13:38:34 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	while (n-- > 0)
+	while ((*str1 || *str2) && n-- > 0)
 	{
-		if (*str1 != *str2)
-			return (*str2 - *str1);
+		if (*str1 > *str2)
+			return (1);
+		if (*str1 < *str2)
+			return (-1);
 		str1++;
 		str2++;
 	}

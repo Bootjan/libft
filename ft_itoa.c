@@ -6,7 +6,7 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:18:29 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 23:46:41 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 15:44:36 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,19 @@ char	*ft_strnew(size_t size)
 
 void	compute_sign_len(int n, int *sign, int *len)
 {
+	*sign = n / 10;
+	*len = 1;
+	while (*sign)
+	{
+		(*len)++;
+		(*sign) /= 10;
+	}
 	*sign = 0;
 	if (n < 0)
+	{
 		*sign = 1;
-	if (n < 0)
 		(*len)++;
+	}
 }
 
 char	*compute_str(char *out, int len, int sign, int n)
@@ -53,10 +61,6 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	sign = n / 10;
-	len = 1;
-	while (sign)
-		len++;
 	compute_sign_len(n, &sign, &len);
 	out = ft_strnew((size_t)(len + 1));
 	if (!out)

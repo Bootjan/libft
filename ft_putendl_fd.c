@@ -6,17 +6,17 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:01:32 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 23:47:14 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 15:50:32 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(const char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
 	while (*s)
 		write(fd, s++, 1);
-	write(1, "\n", 1);
+	write(fd, "\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:48:15 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/04 00:07:56 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 15:49:36 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void			ft_bzero(void *s, size_t n);
 void			*ft_memalloc(size_t size);
 char			*ft_strnew(size_t size);
 char			*ft_strdup(const char *s1);
-unsigned long	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 int				ft_isalpha(char c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -34,7 +34,7 @@ size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_strtrim(const char *s);
+char			*ft_strtrim(const char *s, char const *set);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *y, const char *x, size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -48,7 +48,7 @@ char			*ft_strchr(const char *s, int c);
 char			**ft_split(char const *s, char c);
 void			ft_putstr_fd(const char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-void			ft_putendl_fd(const char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
 void			ft_putchar_fd(char c, int fd);
 char			*ft_itoa(int n);
 void			*ft_memchr(const void *s, int c, size_t n);

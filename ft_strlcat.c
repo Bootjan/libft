@@ -6,7 +6,7 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:08:24 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/04 00:05:51 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 13:27:39 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (dst_len > dstsize)
+	if (dst_len >= dstsize)
 		return (dstsize + src_len);
 	i = 0;
 	while (src[i] && dstsize - dst_len - i - 1 > 0)
@@ -28,6 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[dst_len + i] = 0;
+	if (dstsize - dst_len - 1 > 0)
+		dst[dst_len + i] = 0;
 	return (dst_len + src_len);
 }

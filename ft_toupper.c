@@ -6,20 +6,13 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:29:38 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/04 00:12:13 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/04 13:29:42 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_toupper(char *s)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] >= 'a' && s[i] <= 'a')
-			s[i] -= 32;
-		i++;
-	}
-	return (s);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
