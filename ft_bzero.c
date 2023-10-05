@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:53:41 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/03 23:46:26 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/05 10:46:37 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*ps;
 
+	ps = s;
 	i = 0;
 	while (i < n)
-		((char *)s)[i++] = 0;
+		ps[i++] = 0;
 }

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:53:18 by bootjan           #+#    #+#             */
-/*   Updated: 2023/07/11 21:02:40 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:19:10 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -23,5 +25,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == 0)
 		return (out);
-	return (0);
+	return (NULL);
 }

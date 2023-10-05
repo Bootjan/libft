@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/04 14:22:15 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:13:41 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	c_t_w(const char *s, char c)
+int	count_total_words(const char *s, char c)
 {
 	int	total_words;
 	int	on_word;
@@ -61,22 +61,26 @@ char	**ft_split(const char *s, char c)
 {
 	char	**out;
 	int		start;
+	int		total_words;
 	int		i;
+	int		j;
 
-	out = (char **)malloc((c_t_w(s, c) + 1) * sizeof(char *));
+	total_words = count_total_words(s, c) + 1;
+	out = (char **)malloc(total_words * sizeof(char *));
 	if (!out)
 		return (0);
 	start = -1;
 	i = 0;
+	j = 0;
 	while (s[i])
 	{
 		if (s[i] == c && start >= 0)
-			*out++ = append_string(s, start, i);
+			out[j++] = append_string(s, start, i);
 		start = update_start(s[i], c, start, i);
 		i++;
 	}
 	if (start >= 0)
-		*out++ = append_string(s, start, i);
-	*out = 0;
-	return (out - c_t_w(s, c));
+		out[j++] = append_string(s, start, i);
+	out[j] = 0;
+	return (out);
 }
