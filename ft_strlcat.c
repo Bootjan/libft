@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 11:08:24 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/05 11:28:24 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:44:44 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	if (dstsize > dst_len + 1)
-		dst[dst_len + i] = 0;
+		dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }

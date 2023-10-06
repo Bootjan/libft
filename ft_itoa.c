@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:18:29 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/05 11:15:21 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:36:31 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ char	*compute_str(char *out, int len, int sign, int n)
 {
 	while (len-- > sign)
 	{
-		if (n <= 9)
-			out[len] = n + '0';
-		else
-			out[len] = n % 10 + '0';
+		out[len] = n % 10 + '0';
 		n /= 10;
 	}
 	return (out);
@@ -55,10 +52,11 @@ char	*ft_itoa(int n)
 	compute_sign_len(n, &sign, &len);
 	out = ft_calloc(len + 1, sizeof(char));
 	if (!out)
-		return (0);
-	if (sign)
-		out[0] = '-';
+		return (NULL);
 	if (n < 0)
+	{
 		n = -n;
+		out[0] = '-';
+	}
 	return (compute_str(out, len, sign, n));
 }

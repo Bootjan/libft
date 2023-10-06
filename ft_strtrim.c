@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:09:56 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/04 14:19:10 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/06 10:43:28 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(const char *s, char const *set)
 	int		i;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	start = 0;
 	while (is_trimmable(s[start], set))
 		start++;
@@ -40,10 +40,13 @@ char	*ft_strtrim(const char *s, char const *set)
 		end--;
 	out = (char *)malloc((end - start + 2) * sizeof(char));
 	if (!out)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (start + i <= end)
-		*out++ = s[start + i++];
-	*out = 0;
-	return (out - (end - start + 1));
+	{
+		out[i] = s[start + i];
+		i++;
+	}
+	out[i] = '\0';
+	return (out);
 }

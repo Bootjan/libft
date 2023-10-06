@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.codam.nl>       +#+  +:+       +#+        */
+/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/05 11:13:41 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:45:09 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*append_string(const char *s, int start, int end)
 
 	out = (char *)malloc((end - start + 1) * sizeof(char));
 	if (!out)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (start + i < end)
 		*out++ = s[start + i++];
@@ -68,7 +68,7 @@ char	**ft_split(const char *s, char c)
 	total_words = count_total_words(s, c) + 1;
 	out = (char **)malloc(total_words * sizeof(char *));
 	if (!out)
-		return (0);
+		return (NULL);
 	start = -1;
 	i = 0;
 	j = 0;
@@ -81,6 +81,6 @@ char	**ft_split(const char *s, char c)
 	}
 	if (start >= 0)
 		out[j++] = append_string(s, start, i);
-	out[j] = 0;
+	out[j] = '\0';
 	return (out);
 }
