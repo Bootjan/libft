@@ -6,7 +6,7 @@
 /*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:09:56 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/06 10:43:28 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:18:03 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,11 @@ char	*ft_strtrim(const char *s, char const *set)
 		return ("");
 	while (is_trimmable(s[end], set) && end > 0)
 		end--;
-	out = (char *)malloc((end - start + 2) * sizeof(char));
+	out = (char *)ft_calloc((end - start + 2), sizeof(char));
 	if (!out)
 		return (NULL);
-	i = 0;
-	while (start + i <= end)
-	{
+	i = -1;
+	while (start + i++ <= end - 1)
 		out[i] = s[start + i];
-		i++;
-	}
-	out[i] = '\0';
 	return (out);
 }

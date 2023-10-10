@@ -6,7 +6,7 @@
 /*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/06 10:45:09 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:13:54 by bschaafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,6 @@ int	count_total_words(const char *s, char c)
 	return (total_words);
 }
 
-char	*append_string(const char *s, int start, int end)
-{
-	char	*out;
-	int		i;
-
-	out = (char *)malloc((end - start + 1) * sizeof(char));
-	if (!out)
-		return (NULL);
-	i = 0;
-	while (start + i < end)
-		*out++ = s[start + i++];
-	*out = 0;
-	return (out - (end - start));
-}
-
 int	update_start(char s, char c, int start, int i)
 {
 	if (s != c && start == -1)
@@ -66,7 +51,7 @@ char	**ft_split(const char *s, char c)
 	int		j;
 
 	total_words = count_total_words(s, c) + 1;
-	out = (char **)malloc(total_words * sizeof(char *));
+	out = (char **)ft_calloc(total_words, sizeof(char *));
 	if (!out)
 		return (NULL);
 	start = -1;
@@ -75,12 +60,11 @@ char	**ft_split(const char *s, char c)
 	while (s[i])
 	{
 		if (s[i] == c && start >= 0)
-			out[j++] = append_string(s, start, i);
+			out[j++] = ft_substr(s, start, i - start);
 		start = update_start(s[i], c, start, i);
 		i++;
 	}
 	if (start >= 0)
-		out[j++] = append_string(s, start, i);
-	out[j] = '\0';
+		out[j++] = ft_substr(s, start, i - start + 1);
 	return (out);
 }
