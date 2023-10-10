@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/10 15:13:54 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:45:09 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char	**ft_split(const char *s, char c)
 		i++;
 	}
 	if (start >= 0)
-		out[j++] = ft_substr(s, start, i - start + 1);
+		out[j++] = ft_substr(s, start, i - start);
+	out[j] = NULL;
 	return (out);
 }
