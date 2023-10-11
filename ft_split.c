@@ -6,66 +6,121 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/10 16:45:09 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/11 12:08:25 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
 int	count_total_words(const char *s, char c)
 {
 	int	total_words;
 	int	on_word;
+	int	i;
 
 	total_words = 0;
 	on_word = 0;
-	while (*s)
+	i = 0;
+	while (s[i])
 	{
-		if (*s != c && on_word == 0)
+		if (on_word == 0 && s[i] != c)
 		{
 			total_words++;
 			on_word = 1;
 		}
-		if (*s == c)
+		if (s[i] == c)
 			on_word = 0;
-		s++;
+		if (s[i] != c)
+			on_word = 1;
+		i++;
 	}
 	return (total_words);
 }
 
-int	update_start(char s, char c, int start, int i)
+int	update_start(const char *s, char c, int start, int i)
 {
-	if (s != c && start == -1)
+	if (s[i] != c && start == -1)
 		return (i);
-	if (s == c)
+	if (s[i] == c)
 		return (-1);
 	return (start);
 }
 
-char	**ft_split(const char *s, char c)
+void	free_array(char **out, int total_words)
 {
-	char	**out;
-	int		start;
-	int		total_words;
-	int		i;
-	int		j;
+	int	i;
 
-	total_words = count_total_words(s, c) + 1;
-	out = (char **)ft_calloc(total_words, sizeof(char *));
+	i = 0;
 	if (!out)
-		return (NULL);
+		return ;
+	while (i < total_words + 1)
+	{
+		if (out[i])
+			free(out[i]);
+		i++;
+	}
+	if (out)
+		free(out);
+}
+
+char	**compute_array(char **out, const char *s, char c, int *error_flag)
+{
+	int	start;
+	int	i;
+	int	j;
+
 	start = -1;
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
 		if (s[i] == c && start >= 0)
-			out[j++] = ft_substr(s, start, i - start);
-		start = update_start(s[i], c, start, i);
-		i++;
+		{
+			out[j] = ft_substr(s, start, i - start);
+			if (!out[j++])
+			{
+				*error_flag = 1;
+				return (out);
+			}
+		}
+		start = update_start(s, c, start, i++);
 	}
 	if (start >= 0)
-		out[j++] = ft_substr(s, start, i - start);
-	out[j] = NULL;
+	{
+		out[j] = ft_substr(s, start, i - start);
+		if (!out[j])
+			*error_flag = 1;
+	}
+	out[++j] = NULL;
 	return (out);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**out;
+	int		total_words;
+	int		error_flag;
+
+	total_words = count_total_words(s, c);
+	if (total_words == 0)
+		return (NULL);
+	printf("%i\n", total_words);
+	out = (char **)malloc((total_words + 1) * sizeof(char *));
+	if (!out)
+		return (NULL);
+	error_flag = 0;
+	out = compute_array(out, s, c, &error_flag);
+	if (error_flag == 1)
+	{
+		free_array(out, total_words);
+		out = NULL;
+	}
+	return (out);
+}
+int	main()
+{
+	char **out = ft_split("hello!zzzzz", 'z');
+	while (*out)
+		printf("%s\n", *out++);
 }

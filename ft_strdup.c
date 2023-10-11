@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 00:10:16 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/10 15:14:35 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/11 00:31:16 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ char	*ft_strdup(const char *s1)
 	out = (char *)ft_calloc(size, sizeof(char));
 	if (!out)
 		return (NULL);
-	ft_memcpy(out, s1, size);
+	ft_memcpy(out, s1, size - 1);
 	return (out);
 }
