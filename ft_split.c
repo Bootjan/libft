@@ -6,11 +6,10 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/11 12:08:25 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/11 13:54:41 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	count_total_words(const char *s, char c)
@@ -73,26 +72,22 @@ char	**compute_array(char **out, const char *s, char c, int *error_flag)
 	start = -1;
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] && *error_flag == 0)
 	{
 		if (s[i] == c && start >= 0)
 		{
 			out[j] = ft_substr(s, start, i - start);
 			if (!out[j++])
-			{
 				*error_flag = 1;
-				return (out);
-			}
 		}
 		start = update_start(s, c, start, i++);
 	}
-	if (start >= 0)
+	if (start >= 0 && *error_flag == 0)
 	{
 		out[j] = ft_substr(s, start, i - start);
-		if (!out[j])
+		if (!out[j++])
 			*error_flag = 1;
 	}
-	out[++j] = NULL;
 	return (out);
 }
 
@@ -103,10 +98,7 @@ char	**ft_split(const char *s, char c)
 	int		error_flag;
 
 	total_words = count_total_words(s, c);
-	if (total_words == 0)
-		return (NULL);
-	printf("%i\n", total_words);
-	out = (char **)malloc((total_words + 1) * sizeof(char *));
+	out = (char **)ft_calloc((total_words + 1), sizeof(char *));
 	if (!out)
 		return (NULL);
 	error_flag = 0;
@@ -117,10 +109,4 @@ char	**ft_split(const char *s, char c)
 		out = NULL;
 	}
 	return (out);
-}
-int	main()
-{
-	char **out = ft_split("hello!zzzzz", 'z');
-	while (*out)
-		printf("%s\n", *out++);
 }
