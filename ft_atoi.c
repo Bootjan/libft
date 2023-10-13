@@ -6,13 +6,13 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:33:43 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/10 22:35:07 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/13 17:06:27 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	compute_result(const char *str, int i, int pos_neg)
+static int	compute_result(const char *str, int i, int pos_neg)
 {
 	long	result;
 	int		max_iter;

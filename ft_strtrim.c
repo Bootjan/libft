@@ -6,13 +6,13 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:09:56 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/10 22:57:53 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/13 17:07:27 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_trimmable(char c, char const *set)
+static int	is_trimmable(char c, char const *set)
 {
 	if (!*set)
 		return (0);

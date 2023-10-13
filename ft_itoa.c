@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:18:29 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/06 10:36:31 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:06:39 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	compute_sign_len(int n, int *sign, int *len)
+static void	compute_sign_len(int n, int *sign, int *len)
 {
 	int	temp;
 
@@ -31,7 +31,7 @@ void	compute_sign_len(int n, int *sign, int *len)
 	}
 }
 
-char	*compute_str(char *out, int len, int sign, int n)
+static char	*compute_str(char *out, int len, int sign, int n)
 {
 	while (len-- > sign)
 	{

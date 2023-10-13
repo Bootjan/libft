@@ -6,13 +6,13 @@
 /*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:27:28 by bschaafs          #+#    #+#             */
-/*   Updated: 2023/10/11 13:54:41 by bootjan          ###   ########.fr       */
+/*   Updated: 2023/10/13 17:07:10 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_total_words(const char *s, char c)
+static int	count_total_words(const char *s, char c)
 {
 	int	total_words;
 	int	on_word;
@@ -37,7 +37,7 @@ int	count_total_words(const char *s, char c)
 	return (total_words);
 }
 
-int	update_start(const char *s, char c, int start, int i)
+static int	update_start(const char *s, char c, int start, int i)
 {
 	if (s[i] != c && start == -1)
 		return (i);
@@ -46,7 +46,7 @@ int	update_start(const char *s, char c, int start, int i)
 	return (start);
 }
 
-void	free_array(char **out, int total_words)
+static void	free_array(char **out, int total_words)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ void	free_array(char **out, int total_words)
 		free(out);
 }
 
-char	**compute_array(char **out, const char *s, char c, int *error_flag)
+static char	**compute_array(char **out, const char *s, char c, int *error_flag)
 {
 	int	start;
 	int	i;

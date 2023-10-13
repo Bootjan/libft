@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bschaafs <bschaafs@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bootjan <bootjan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 15:02:11 by bootjan           #+#    #+#             */
-/*   Updated: 2023/10/06 10:34:12 by bschaafs         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:06:50 by bootjan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_helper(long n, int fd)
+static void	ft_putnbr_helper(long n, int fd)
 {
 	int	placeholder;
 
